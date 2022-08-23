@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MVC.Models.trabajdores>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Colaboradores en Nomina</h2>
+
+<p style="width: 15%; padding: 10px; border-radius: 15px; background-color: springgreen; text-align: center;">
+    @Html.ActionLink("Nuevo Colaborador", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tipoDocumento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomtrabajador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dirTrabajador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telTrabajdor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.celTrabajador)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipoDocumento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomtrabajador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dirTrabajador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telTrabajdor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.celTrabajador)
+        </td>
+        <td  style="border-radius:20px; background-color:springgreen; text-align:center">
+            @Html.ActionLink("Editar", "Edit", new { id=item.idtrabajador }) 
+                        
+        </td>
+        <td  style="border-radius:20px; background-color:blue; text-align:center">
+            @Html.ActionLink("Detalles", "Details", new { id = item.idtrabajador })
+        </td>
+        <td  style="border-radius:20px; background-color:red; text-align:center">
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.idtrabajador })
+        </td>
+    </tr>
+}
+
+</table>
+<div style="border:solid; width: 100%; height: 500px; background-image: url(https://img.freepik.com/vector-gratis/grupo-equipo-chef-diverso-personajes-servicio-trabajador-cocina-internacional-parados-juntos-vector-personaje-dibujos-animados-uniforme_3559-1869.jpg?w=2000) "></div>

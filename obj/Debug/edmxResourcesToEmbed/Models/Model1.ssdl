@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="restauranteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="comenzales">
+    <Key>
+      <PropertyRef Name="idcomenzal" />
+    </Key>
+    <Property Name="idcomenzal" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="nombreComenzal" Type="nvarchar" MaxLength="50" />
+    <Property Name="platosDeGusto" Type="nvarchar" MaxLength="50" />
+    <Property Name="telcomenzal" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ingredientes">
+    <Key>
+      <PropertyRef Name="idIngrediente" />
+    </Key>
+    <Property Name="idIngrediente" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="tipoIngrediente" Type="nvarchar" MaxLength="20" />
+    <Property Name="nomIngrediente" Type="nvarchar" MaxLength="50" />
+    <Property Name="cantidad" Type="nvarchar" MaxLength="50" />
+    <Property Name="inventario" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="receta">
+    <Key>
+      <PropertyRef Name="idreceta" />
+    </Key>
+    <Property Name="idreceta" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="nombre_receta" Type="nvarchar" MaxLength="50" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="10" />
+    <Property Name="valorReceta" Type="int" />
+    <Property Name="ingrdientes" Type="nvarchar" MaxLength="50" />
+    <Property Name="ubicacionReceta" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="trabajdores">
+    <Key>
+      <PropertyRef Name="idtrabajador" />
+    </Key>
+    <Property Name="idtrabajador" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="tipoDocumento" Type="nvarchar" MaxLength="20" />
+    <Property Name="nomtrabajador" Type="nvarchar" MaxLength="50" />
+    <Property Name="dirTrabajador" Type="nvarchar" MaxLength="50" />
+    <Property Name="telTrabajdor" Type="nvarchar" MaxLength="10" />
+    <Property Name="celTrabajador" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityContainer Name="restauranteModelStoreContainer">
+    <EntitySet Name="comenzales" EntityType="Self.comenzales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ingredientes" EntityType="Self.ingredientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="receta" EntityType="Self.receta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="trabajdores" EntityType="Self.trabajdores" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

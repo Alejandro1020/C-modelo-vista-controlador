@@ -1,0 +1,58 @@
+﻿@model MVC.Models.receta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Receta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_receta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_receta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valorReceta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valorReceta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ingrdientes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ingrdientes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ubicacionReceta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ubicacionReceta)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idreceta }) |
+    @Html.ActionLink("Volver al Listado", "Index")
+</p>

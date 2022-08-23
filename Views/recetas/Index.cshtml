@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MVC.Models.receta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Recetario</h2>
+<div style="height:300px; background-image: url(https://esnobismogourmet.files.wordpress.com/2014/07/valor-cultural-recetarios-cocina-cookbooks.jpg)"></div>
+<p style="margin:10px; width:15%; padding:10px; border-radius:15px; background-color:springgreen;text-align:center; text-decoration-color:white;">
+    @Html.ActionLink("Nueva Receta", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_receta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valorReceta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ingrdientes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ubicacionReceta)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_receta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valorReceta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ingrdientes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ubicacionReceta)
+        </td>
+        <td style="border-radius:20px; background-color:springgreen; text-align:center">
+            @Html.ActionLink("Editar", "Edit", new { id=item.idreceta })             
+            
+        </td>
+        <td style="border-radius:20px; background-color:blue; text-align:center">
+            @Html.ActionLink("Detalles", "Details", new { id = item.idreceta })
+        </td>
+        <td style="border-radius:20px; background-color:red; text-align:center">
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.idreceta })
+        </td>
+    </tr>
+}
+
+</table>
+

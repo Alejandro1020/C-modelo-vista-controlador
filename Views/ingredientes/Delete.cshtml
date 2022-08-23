@@ -1,0 +1,61 @@
+﻿@model MVC.Models.ingredientes
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Usted esta seguro que quiere Eliminar este Ingrediente?</h3>
+<div>
+    <br />
+    <br />
+    <br />
+    <div>
+        <h4>Ingredientes</h4>
+        <hr />
+        <dl class="dl-horizontal" style="border:solid;border-color:red;">
+            <dt>
+                @Html.DisplayNameFor(model => model.tipoIngrediente)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tipoIngrediente)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.nomIngrediente)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nomIngrediente)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.cantidad)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.cantidad)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.inventario)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.inventario)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar" class="btn btn-default" /> |
+                @Html.ActionLink("Volver al Listado", "Index")
+            </div>
+        }
+    </div>

@@ -1,0 +1,51 @@
+﻿@model MVC.Models.comenzales
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Usted esta seguro que quiere Eliminar este Comensal?</h3>
+<div>
+    <br />
+    <br />
+    <br />
+    <h4>Comensales</h4>
+    <hr />
+    <dl class="dl-horizontal" style="border:solid;border-color:red;">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreComenzal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreComenzal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.platosDeGusto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.platosDeGusto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telcomenzal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telcomenzal)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver al Listado", "Index")
+        </div>
+    }
+</div>

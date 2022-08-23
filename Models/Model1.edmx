@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="restauranteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="comenzales">
+          <Key>
+            <PropertyRef Name="idcomenzal" />
+          </Key>
+          <Property Name="idcomenzal" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="nombreComenzal" Type="nvarchar" MaxLength="50" />
+          <Property Name="platosDeGusto" Type="nvarchar" MaxLength="50" />
+          <Property Name="telcomenzal" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ingredientes">
+          <Key>
+            <PropertyRef Name="idIngrediente" />
+          </Key>
+          <Property Name="idIngrediente" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tipoIngrediente" Type="nvarchar" MaxLength="20" />
+          <Property Name="nomIngrediente" Type="nvarchar" MaxLength="50" />
+          <Property Name="cantidad" Type="nvarchar" MaxLength="50" />
+          <Property Name="inventario" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="receta">
+          <Key>
+            <PropertyRef Name="idreceta" />
+          </Key>
+          <Property Name="idreceta" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="nombre_receta" Type="nvarchar" MaxLength="50" />
+          <Property Name="descripcion" Type="nvarchar" MaxLength="10" />
+          <Property Name="valorReceta" Type="int" />
+          <Property Name="ingrdientes" Type="nvarchar" MaxLength="50" />
+          <Property Name="ubicacionReceta" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="trabajdores">
+          <Key>
+            <PropertyRef Name="idtrabajador" />
+          </Key>
+          <Property Name="idtrabajador" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tipoDocumento" Type="nvarchar" MaxLength="20" />
+          <Property Name="nomtrabajador" Type="nvarchar" MaxLength="50" />
+          <Property Name="dirTrabajador" Type="nvarchar" MaxLength="50" />
+          <Property Name="telTrabajdor" Type="nvarchar" MaxLength="10" />
+          <Property Name="celTrabajador" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityContainer Name="restauranteModelStoreContainer">
+          <EntitySet Name="comenzales" EntityType="Self.comenzales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ingredientes" EntityType="Self.ingredientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="receta" EntityType="Self.receta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trabajdores" EntityType="Self.trabajdores" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="restauranteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="comenzales">
+          <Key>
+            <PropertyRef Name="idcomenzal" />
+          </Key>
+          <Property Name="idcomenzal" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nombreComenzal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="platosDeGusto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="telcomenzal" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ingredientes">
+          <Key>
+            <PropertyRef Name="idIngrediente" />
+          </Key>
+          <Property Name="idIngrediente" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tipoIngrediente" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="nomIngrediente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cantidad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="inventario" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="receta">
+          <Key>
+            <PropertyRef Name="idreceta" />
+          </Key>
+          <Property Name="idreceta" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nombre_receta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="descripcion" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="valorReceta" Type="Int32" />
+          <Property Name="ingrdientes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ubicacionReceta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="trabajdores">
+          <Key>
+            <PropertyRef Name="idtrabajador" />
+          </Key>
+          <Property Name="idtrabajador" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tipoDocumento" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="nomtrabajador" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dirTrabajador" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="telTrabajdor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="celTrabajador" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="restauranteEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="comenzales" EntityType="Self.comenzales" />
+          <EntitySet Name="ingredientes" EntityType="Self.ingredientes" />
+          <EntitySet Name="receta" EntityType="Self.receta" />
+          <EntitySet Name="trabajdores" EntityType="Self.trabajdores" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="restauranteModelStoreContainer" CdmEntityContainer="restauranteEntities">
+          <EntitySetMapping Name="comenzales">
+            <EntityTypeMapping TypeName="restauranteModel.comenzales">
+              <MappingFragment StoreEntitySet="comenzales">
+                <ScalarProperty Name="idcomenzal" ColumnName="idcomenzal" />
+                <ScalarProperty Name="nombreComenzal" ColumnName="nombreComenzal" />
+                <ScalarProperty Name="platosDeGusto" ColumnName="platosDeGusto" />
+                <ScalarProperty Name="telcomenzal" ColumnName="telcomenzal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ingredientes">
+            <EntityTypeMapping TypeName="restauranteModel.ingredientes">
+              <MappingFragment StoreEntitySet="ingredientes">
+                <ScalarProperty Name="idIngrediente" ColumnName="idIngrediente" />
+                <ScalarProperty Name="tipoIngrediente" ColumnName="tipoIngrediente" />
+                <ScalarProperty Name="nomIngrediente" ColumnName="nomIngrediente" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="inventario" ColumnName="inventario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="receta">
+            <EntityTypeMapping TypeName="restauranteModel.receta">
+              <MappingFragment StoreEntitySet="receta">
+                <ScalarProperty Name="idreceta" ColumnName="idreceta" />
+                <ScalarProperty Name="nombre_receta" ColumnName="nombre_receta" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="valorReceta" ColumnName="valorReceta" />
+                <ScalarProperty Name="ingrdientes" ColumnName="ingrdientes" />
+                <ScalarProperty Name="ubicacionReceta" ColumnName="ubicacionReceta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trabajdores">
+            <EntityTypeMapping TypeName="restauranteModel.trabajdores">
+              <MappingFragment StoreEntitySet="trabajdores">
+                <ScalarProperty Name="idtrabajador" ColumnName="idtrabajador" />
+                <ScalarProperty Name="tipoDocumento" ColumnName="tipoDocumento" />
+                <ScalarProperty Name="nomtrabajador" ColumnName="nomtrabajador" />
+                <ScalarProperty Name="dirTrabajador" ColumnName="dirTrabajador" />
+                <ScalarProperty Name="telTrabajdor" ColumnName="telTrabajdor" />
+                <ScalarProperty Name="celTrabajador" ColumnName="celTrabajador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

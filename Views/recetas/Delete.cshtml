@@ -1,0 +1,67 @@
+﻿@model MVC.Models.receta
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Usted esta seguro que quiere Eliminar esta Receta?</h3>
+<div>
+    <br />
+    <br />
+    <br />
+    <h4>Receta</h4>
+    <hr />
+    <dl class="dl-horizontal" style="border:solid; border-color:red;">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_receta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_receta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valorReceta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valorReceta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ingrdientes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ingrdientes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ubicacionReceta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ubicacionReceta)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> 
+            @Html.ActionLink("Volver al Listado", "Index")
+        </div>
+    }
+</div>

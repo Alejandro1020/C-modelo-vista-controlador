@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="restauranteModel1StoreContainer" CdmEntityContainer="restauranteEntities1">
+    <EntitySetMapping Name="comenzales">
+      <EntityTypeMapping TypeName="restauranteModel1.comenzales">
+        <MappingFragment StoreEntitySet="comenzales">
+          <ScalarProperty Name="idcomenzal" ColumnName="idcomenzal" />
+          <ScalarProperty Name="nombreComenzal" ColumnName="nombreComenzal" />
+          <ScalarProperty Name="platosDeGusto" ColumnName="platosDeGusto" />
+          <ScalarProperty Name="telcomenzal" ColumnName="telcomenzal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ingredientes">
+      <EntityTypeMapping TypeName="restauranteModel1.ingredientes">
+        <MappingFragment StoreEntitySet="ingredientes">
+          <ScalarProperty Name="idIngrediente" ColumnName="idIngrediente" />
+          <ScalarProperty Name="tipoIngrediente" ColumnName="tipoIngrediente" />
+          <ScalarProperty Name="nomIngrediente" ColumnName="nomIngrediente" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="inventario" ColumnName="inventario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="receta">
+      <EntityTypeMapping TypeName="restauranteModel1.receta">
+        <MappingFragment StoreEntitySet="receta">
+          <ScalarProperty Name="idreceta" ColumnName="idreceta" />
+          <ScalarProperty Name="nombre_receta" ColumnName="nombre_receta" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="valorReceta" ColumnName="valorReceta" />
+          <ScalarProperty Name="ingrdientes" ColumnName="ingrdientes" />
+          <ScalarProperty Name="ubicacionReceta" ColumnName="ubicacionReceta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trabajdores">
+      <EntityTypeMapping TypeName="restauranteModel1.trabajdores">
+        <MappingFragment StoreEntitySet="trabajdores">
+          <ScalarProperty Name="idtrabajador" ColumnName="idtrabajador" />
+          <ScalarProperty Name="tipoDocumento" ColumnName="tipoDocumento" />
+          <ScalarProperty Name="nomtrabajador" ColumnName="nomtrabajador" />
+          <ScalarProperty Name="dirTrabajador" ColumnName="dirTrabajador" />
+          <ScalarProperty Name="telTrabajdor" ColumnName="telTrabajdor" />
+          <ScalarProperty Name="celTrabajador" ColumnName="celTrabajador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

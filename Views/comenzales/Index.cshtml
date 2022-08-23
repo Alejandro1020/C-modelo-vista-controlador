@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MVC.Models.comenzales>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Registro de Comensales</h2>
+<div style="height:500px; background-image: url(https://www.lavanguardia.com/files/og_thumbnail/uploads/2017/04/29/5fa3c3be11901.jpeg)"></div>
+
+<p style="margin:10px; width:15%; padding:10px; border-radius:15px; background-color:springgreen;text-align:center;">
+    @Html.ActionLink("Nuevo Comensal", "Create")
+</p>
+<table class="table">
+    <tr style="">
+        <th>
+            @Html.DisplayNameFor(model => model.nombreComenzal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.platosDeGusto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telcomenzal)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreComenzal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.platosDeGusto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telcomenzal)
+            </td>
+            <td style="border-radius:20px; background-color:springgreen; text-align:center">
+
+                @Html.ActionLink("Editar", "Edit", new { id = item.idcomenzal })
+
+            </td>
+            <td style="border-radius: 20px; background-color: blue; text-align: center">
+                @Html.ActionLink("Detalles", "Details", new { id = item.idcomenzal })
+            </td>
+            <td style="border-radius: 20px; background-color: red; text-align: center">
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.idcomenzal })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<div style="position:center;">
+    La experiencia vivida en un restaurante
+    determina, a veces de manera inconsciente,
+    si ha sido satisfactoria y si regresaremos
+    o no a ese lugar. Seguro que, si te pones a
+    pensarlo, recuerdas perfectamente algún sitio en el
+    que te han atendido de forma excepcional, y por tanto,
+    guardas un grato recuerdo del restaurante y podrías volver o recomendarlo.
+</div>

@@ -1,0 +1,42 @@
+﻿@model MVC.Models.comenzales
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Comensales</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreComenzal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreComenzal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.platosDeGusto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.platosDeGusto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telcomenzal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telcomenzal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idcomenzal }) |
+    @Html.ActionLink("Volver al Listado", "Index")
+</p>

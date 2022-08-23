@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="restauranteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="comenzales">
+    <Key>
+      <PropertyRef Name="idcomenzal" />
+    </Key>
+    <Property Name="idcomenzal" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nombreComenzal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="platosDeGusto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="telcomenzal" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ingredientes">
+    <Key>
+      <PropertyRef Name="idIngrediente" />
+    </Key>
+    <Property Name="idIngrediente" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tipoIngrediente" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="nomIngrediente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cantidad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="inventario" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="receta">
+    <Key>
+      <PropertyRef Name="idreceta" />
+    </Key>
+    <Property Name="idreceta" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nombre_receta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="descripcion" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="valorReceta" Type="Int32" />
+    <Property Name="ingrdientes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ubicacionReceta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="trabajdores">
+    <Key>
+      <PropertyRef Name="idtrabajador" />
+    </Key>
+    <Property Name="idtrabajador" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tipoDocumento" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="nomtrabajador" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dirTrabajador" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="telTrabajdor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="celTrabajador" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="restauranteEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="comenzales" EntityType="Self.comenzales" />
+    <EntitySet Name="ingredientes" EntityType="Self.ingredientes" />
+    <EntitySet Name="receta" EntityType="Self.receta" />
+    <EntitySet Name="trabajdores" EntityType="Self.trabajdores" />
+  </EntityContainer>
+</Schema>

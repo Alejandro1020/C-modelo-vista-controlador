@@ -1,0 +1,67 @@
+﻿@model MVC.Models.trabajdores
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Usted esta seguro que quiere Eliminar este Colaborador?</h3>
+<div>
+    <br />
+    <br />
+    <br />
+    <h4>Colaboradores</h4>
+    <hr />
+    <dl class="dl-horizontal" style="border:solid; border-color:red;">
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoDocumento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoDocumento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomtrabajador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomtrabajador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dirTrabajador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dirTrabajador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telTrabajdor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telTrabajdor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.celTrabajador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.celTrabajador)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver al Listado", "Index")
+        </div>
+    }
+</div>
